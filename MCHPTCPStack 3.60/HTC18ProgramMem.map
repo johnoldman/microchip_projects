@@ -1,0 +1,1764 @@
+HI-TECH Software PICC-18 Compiler V9.50PL1
+
+Linker command line:
+
+--edf=C:\Program Files\HI-TECH Software\PICC-18\9.50\dat\en_msgs.txt \
+  -h+HTC18ProgramMem.sym -z -Q18F8722 -ol.obj -MHTC18ProgramMem.map -E1 \
+  -ver=PICC-18#V9.50PL1 -ACODE=00h-01FFFFh -ARAM=00h-0FFhx15,0F00h-0F5Fh \
+  -ABIGRAM=00h-0F5Fh -ACOMRAM=00h-05Fh -ANVRAM=0F00h-0F5Fh \
+  -preset_vec=00h,intcode=08h,intcodelo=018h,powerup,init,end_init \
+  -pramtop=01000h -ACONFIG=0300000h-030000Dh -pconfig=CONFIG \
+  -AIDLOC=0200000h-0200007h -pidloc=IDLOC -AEEDATA=0F00000h-0F003FFh \
+  -peeprom_data=EEDATA -pconst=end_init+01000h \
+  -ptemp=COMRAM,nvrram=COMRAM,nvbit=COMRAM,rbss=COMRAM,rbit=COMRAM,rdata=COMRAM \
+  -pstruct=COMRAM -pnvram=NVRAM -AFARRAM=00h-00h \
+  -pfarbss=FARRAM,fardata=FARRAM \
+  -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pparam=RAM -pdata=RAM \
+  -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE \
+  C:\DOCUME~1\c12128\LOCALS~1\Temp\sr0.obj \
+  C:\Work\MCHPTCPStack\MCHPTCPStack 3.60\Source\Announce.obj \
+  C:\Work\MCHPTCPStack\MCHPTCPStack 3.60\Source\ARP.obj \
+  C:\Work\MCHPTCPStack\MCHPTCPStack 3.60\Source\ARPTsk.obj \
+  C:\Work\MCHPTCPStack\MCHPTCPStack 3.60\Source\Delay.obj \
+  C:\Work\MCHPTCPStack\MCHPTCPStack 3.60\Source\DHCP.obj \
+  C:\Work\MCHPTCPStack\MCHPTCPStack 3.60\Source\ENC28J60.obj \
+  C:\Work\MCHPTCPStack\MCHPTCPStack 3.60\Source\Helpers.obj \
+  C:\Work\MCHPTCPStack\MCHPTCPStack 3.60\Source\HTTP.obj \
+  C:\Work\MCHPTCPStack\MCHPTCPStack 3.60\Source\ICMP.obj \
+  C:\Work\MCHPTCPStack\MCHPTCPStack 3.60\Source\IP.obj \
+  C:\Work\MCHPTCPStack\MCHPTCPStack 3.60\Source\LCDBlocking.obj \
+  C:\Work\MCHPTCPStack\MCHPTCPStack 3.60\Source\MainDemo.obj \
+  C:\Work\MCHPTCPStack\MCHPTCPStack 3.60\Source\MPFS.obj \
+  C:\Work\MCHPTCPStack\MCHPTCPStack 3.60\Source\MPFSImg.obj \
+  C:\Work\MCHPTCPStack\MCHPTCPStack 3.60\Source\StackTsk.obj \
+  C:\Work\MCHPTCPStack\MCHPTCPStack 3.60\Source\TCP.obj \
+  C:\Work\MCHPTCPStack\MCHPTCPStack 3.60\Source\Tick.obj \
+  C:\Work\MCHPTCPStack\MCHPTCPStack 3.60\Source\UART.obj \
+  C:\Work\MCHPTCPStack\MCHPTCPStack 3.60\Source\UDP.obj \
+  C:\Program Files\HI-TECH Software\PICC-18\9.50\lib\pic82--p.lib \
+  C:\Program Files\HI-TECH Software\PICC-18\9.50\lib\pic82l-c.lib \
+  C:\Program Files\HI-TECH Software\PICC-18\9.50\lib\pic080pm.lib 
+
+Object code version is 3.7
+
+Machine type is 18F8722
+
+Call graph:
+
+*_main size 0,0 offset 0
+     _InitializeBoard size 0,0 offset 0
+     _TickInit size 0,0 offset 0
+     _MPFSInit size 0,0 offset 0
+     _InitAppConfig size 0,0 offset 0
+     _SetConfig size 0,1 offset 0
+         _putrsUSART size 2,0 offset 28
+             _BusyUSART size 0,0 offset 37
+             _WriteUSART size 0,0 offset 37
+         _GetMenuChoice size 0,1 offset 1
+             _DataRdyUSART size 0,0 offset 33
+             _ReadUSART size 0,0 offset 33
+         _ExecuteMenuChoice size 0,27 offset 1
+             _putrsUSART size 2,0 offset 28
+                 _BusyUSART size 0,0 offset 37
+                 _WriteUSART size 0,0 offset 37
+             _itoa size 4,2 offset 35
+                 lwdiv size 0,0 offset 41
+                 lwmul size 0,0 offset 41
+             _putsUSART size 2,0 offset 35
+                 _BusyUSART size 0,0 offset 37
+                 _WriteUSART size 0,0 offset 37
+             _BusyUSART size 0,0 offset 37
+             _WriteUSART size 0,0 offset 37
+             _ReadStringUART size 3,2 offset 28
+                 _DataRdyUSART size 0,0 offset 33
+                 _ReadUSART size 0,0 offset 33
+             _atoi size 2,4 offset 35
+                 _isdigit size 0,0 offset 41
+                 awmul size 0,0 offset 41
+             _DisplayIPValue size 2,5 offset 28
+                 _itoa size 4,2 offset 35
+                     lwdiv size 0,0 offset 41
+                     lwmul size 0,0 offset 41
+                 _putsUSART size 2,0 offset 35
+                     _BusyUSART size 0,0 offset 37
+                     _WriteUSART size 0,0 offset 37
+                 _BusyUSART size 0,0 offset 37
+                 _WriteUSART size 0,0 offset 37
+             _StringToIPAddress size 4,3 offset 28
+                 _atoi size 2,4 offset 35
+                     _isdigit size 0,0 offset 41
+                     awmul size 0,0 offset 41
+             _DataRdyUSART size 0,0 offset 33
+             _ReadUSART size 0,0 offset 33
+     _StackInit size 0,0 offset 0
+         _MACInit size 0,1 offset 0
+             _ReadETHReg size 0,0 offset 233
+             _SendSystemReset size 0,0 offset 1
+             _DelayMs size 2,0 offset 1
+             _WriteReg size 1,0 offset 233
+             _BankSel size 2,0 offset 233
+                 _BFCReg size 1,0 offset 235
+                 _BFSReg size 1,0 offset 235
+             _WritePHYReg size 2,1 offset 4
+                 _BankSel size 2,0 offset 233
+                     _BFCReg size 1,0 offset 235
+                     _BFSReg size 1,0 offset 235
+                 _WriteReg size 1,0 offset 233
+                 _ReadMACReg size 0,0 offset 9
+             _MACSetDuplex size 0,3 offset 1
+                 _BFCReg size 1,0 offset 235
+                 _ReadPHYReg size 0,3 offset 6
+                     _BankSel size 2,0 offset 233
+                         _BFCReg size 1,0 offset 235
+                         _BFSReg size 1,0 offset 235
+                     _WriteReg size 1,0 offset 233
+                     _ReadMACReg size 0,0 offset 9
+                 _WritePHYReg size 2,1 offset 4
+                     _BankSel size 2,0 offset 233
+                         _BFCReg size 1,0 offset 235
+                         _BFSReg size 1,0 offset 235
+                     _WriteReg size 1,0 offset 233
+                     _ReadMACReg size 0,0 offset 9
+                 _BankSel size 2,0 offset 233
+                     _BFCReg size 1,0 offset 235
+                     _BFSReg size 1,0 offset 235
+                 _ReadMACReg size 0,0 offset 9
+                 _WriteReg size 1,0 offset 233
+                 _BFSReg size 1,0 offset 235
+             _BFSReg size 1,0 offset 235
+             lwmul size 0,0 offset 41
+         _ARPInit size 0,0 offset 0
+         _UDPInit size 0,0 offset 0
+         _TCPInit size 0,0 offset 0
+     _HTTPInit size 0,1 offset 0
+         _TCPListen size 2,0 offset 1
+     _TickGet size 0,0 offset 78
+     _StackTask size 0,6 offset 0
+         _MACGetHeader size 4,20 offset 6
+             _BankSel size 2,0 offset 233
+                 _BFCReg size 1,0 offset 235
+                 _BFSReg size 1,0 offset 235
+             _ReadETHReg size 0,0 offset 233
+             _MACDiscardRx size 0,2 offset 139
+                 _BFSReg size 1,0 offset 235
+                 _BankSel size 2,0 offset 233
+                     _BFCReg size 1,0 offset 235
+                     _BFSReg size 1,0 offset 235
+                 _WriteReg size 1,0 offset 233
+             _WriteReg size 1,0 offset 233
+             _MACGetArray size 4,0 offset 214
+             _swaps size 2,2 offset 229
+             _memcpy size 6,0 offset 154
+         _MACIsLinked size 0,0 offset 6
+             _ReadPHYReg size 0,3 offset 6
+                 _BankSel size 2,0 offset 233
+                     _BFCReg size 1,0 offset 235
+                     _BFSReg size 1,0 offset 235
+                 _WriteReg size 1,0 offset 233
+                 _ReadMACReg size 0,0 offset 9
+         _DHCPReset size 0,0 offset 21
+             _UDPClose size 0,0 offset 21
+         _MACDiscardRx size 0,2 offset 139
+             _BFSReg size 1,0 offset 235
+             _BankSel size 2,0 offset 233
+                 _BFCReg size 1,0 offset 235
+                 _BFSReg size 1,0 offset 235
+             _WriteReg size 1,0 offset 233
+         _ARPProcess size 0,11 offset 6
+             _ARPGet size 4,28 offset 17
+                 _MACGetArray size 4,0 offset 214
+                 _MACDiscardRx size 0,2 offset 139
+                     _BFSReg size 1,0 offset 235
+                     _BankSel size 2,0 offset 233
+                         _BFCReg size 1,0 offset 235
+                         _BFSReg size 1,0 offset 235
+                     _WriteReg size 1,0 offset 233
+                 _SwapARPPacket size 2,0 offset 49
+                     _swaps size 2,2 offset 229
+                 structcopy size 0,0 offset 49
+             _ARPPut size 3,29 offset 17
+                 _MACGetTxBuffer size 0,0 offset 202
+                     _ReadETHReg size 0,0 offset 233
+                 _MACSetTxBuffer size 2,0 offset 227
+                     _BankSel size 2,0 offset 233
+                         _BFCReg size 1,0 offset 235
+                         _BFSReg size 1,0 offset 235
+                     _WriteReg size 1,0 offset 233
+                 _SwapARPPacket size 2,0 offset 49
+                     _swaps size 2,2 offset 229
+                 _MACPutHeader size 5,0 offset 227
+                     _BankSel size 2,0 offset 233
+                         _BFCReg size 1,0 offset 235
+                         _BFSReg size 1,0 offset 235
+                     _WriteReg size 1,0 offset 233
+                     _MACPut size 0,0 offset 232
+                     _MACPutArray size 4,0 offset 232
+                 _MACPutArray size 4,0 offset 232
+                 _MACFlush size 0,12 offset 202
+                     _BankSel size 2,0 offset 233
+                         _BFCReg size 1,0 offset 235
+                         _BFSReg size 1,0 offset 235
+                     _WriteReg size 1,0 offset 233
+                     _ReadETHReg size 0,0 offset 233
+                     _BFSReg size 1,0 offset 235
+                     _BFCReg size 1,0 offset 235
+                     _MACGetArray size 4,0 offset 214
+                 structcopy size 0,0 offset 49
+         _IPGetHeader size 8,22 offset 6
+             _MACGetArray size 4,0 offset 214
+             _MACCalcRxChecksum size 4,2 offset 60
+                 _BankSel size 2,0 offset 233
+                     _BFCReg size 1,0 offset 235
+                     _BFSReg size 1,0 offset 235
+                 _WriteReg size 1,0 offset 233
+                 _BFSReg size 1,0 offset 235
+                 _ReadETHReg size 0,0 offset 233
+             _MACSetRxBuffer size 2,2 offset 140
+                 _BankSel size 2,0 offset 233
+                     _BFCReg size 1,0 offset 235
+                     _BFSReg size 1,0 offset 235
+                 _WriteReg size 1,0 offset 233
+             _SwapIPHeader size 2,0 offset 227
+                 _swaps size 2,2 offset 229
+         _UDPProcess size 6,23 offset 6
+             _MACGetArray size 4,0 offset 214
+             _swaps size 2,2 offset 229
+             _CalcIPChecksum size 4,8 offset 202
+             _IPSetRxBuffer size 2,0 offset 138
+                 _MACSetRxBuffer size 2,2 offset 140
+                     _BankSel size 2,0 offset 233
+                         _BFCReg size 1,0 offset 235
+                         _BFSReg size 1,0 offset 235
+                     _WriteReg size 1,0 offset 233
+             _MACPut size 0,0 offset 232
+             _CalcIPBufferChecksum size 2,2 offset 202
+                 _MACGet size 0,0 offset 206
+                 _BankSel size 2,0 offset 233
+                     _BFCReg size 1,0 offset 235
+                     _BFSReg size 1,0 offset 235
+                 _ReadETHReg size 0,0 offset 233
+                 _WriteReg size 1,0 offset 233
+                 _BFSReg size 1,0 offset 235
+             _MACDiscardRx size 0,2 offset 139
+                 _BFSReg size 1,0 offset 235
+                 _BankSel size 2,0 offset 233
+                     _BFCReg size 1,0 offset 235
+                     _BFSReg size 1,0 offset 235
+                 _WriteReg size 1,0 offset 233
+             _FindMatchingSocket size 6,3 offset 35
+                 _memcpy size 6,0 offset 154
+         _TCPProcess size 6,37 offset 6
+             _swaps size 2,2 offset 229
+             _CalcIPChecksum size 4,8 offset 202
+             _CalcIPBufferChecksum size 2,2 offset 202
+                 _MACGet size 0,0 offset 206
+                 _BankSel size 2,0 offset 233
+                     _BFCReg size 1,0 offset 235
+                     _BFSReg size 1,0 offset 235
+                 _ReadETHReg size 0,0 offset 233
+                 _WriteReg size 1,0 offset 233
+                 _BFSReg size 1,0 offset 235
+             _MACDiscardRx size 0,2 offset 139
+                 _BFSReg size 1,0 offset 235
+                 _BankSel size 2,0 offset 233
+                     _BFCReg size 1,0 offset 235
+                     _BFSReg size 1,0 offset 235
+                 _WriteReg size 1,0 offset 233
+             _IPSetRxBuffer size 2,0 offset 138
+                 _MACSetRxBuffer size 2,2 offset 140
+                     _BankSel size 2,0 offset 233
+                         _BFCReg size 1,0 offset 235
+                         _BFSReg size 1,0 offset 235
+                     _WriteReg size 1,0 offset 233
+             _MACGetArray size 4,0 offset 214
+             _SwapTCPHeader size 2,0 offset 202
+                 _swaps size 2,2 offset 229
+                 _swapl size 4,4 offset 204
+             _FindMatchingSocket size 4,3 offset 49
+                 _memcpy size 6,0 offset 154
+             _HandleTCPSeg size 6,23 offset 49
+                 _TickGet size 0,0 offset 78
+                 _MACDiscardRx size 0,2 offset 139
+                     _BFSReg size 1,0 offset 235
+                     _BankSel size 2,0 offset 233
+                         _BFCReg size 1,0 offset 235
+                         _BFSReg size 1,0 offset 235
+                     _WriteReg size 1,0 offset 233
+                 _memcpy size 6,0 offset 154
+                 _MACDiscardTx size 0,0 offset 139
+                 _CloseSocket size 2,0 offset 137
+                     _MACDiscardTx size 0,0 offset 139
+                     _MACDiscardRx size 0,2 offset 139
+                         _BFSReg size 1,0 offset 235
+                         _BankSel size 2,0 offset 233
+                             _BFCReg size 1,0 offset 235
+                             _BFSReg size 1,0 offset 235
+                         _WriteReg size 1,0 offset 233
+                 _TransmitTCP size 18,38 offset 146
+                     _MACIsTxReady size 0,0 offset 202
+                         _ReadETHReg size 0,0 offset 233
+                     _MACGetTxBuffer size 0,0 offset 202
+                         _ReadETHReg size 0,0 offset 233
+                     _MACSetTxBuffer size 2,0 offset 227
+                         _BankSel size 2,0 offset 233
+                             _BFCReg size 1,0 offset 235
+                             _BFSReg size 1,0 offset 235
+                         _WriteReg size 1,0 offset 233
+                     _MACGetFreeRxSize size 0,4 offset 202
+                         _BankSel size 2,0 offset 233
+                             _BFCReg size 1,0 offset 235
+                             _BFSReg size 1,0 offset 235
+                         _ReadETHReg size 0,0 offset 233
+                     _SwapTCPHeader size 2,0 offset 202
+                         _swaps size 2,2 offset 229
+                         _swapl size 4,4 offset 204
+                     _swaps size 2,2 offset 229
+                     _CalcIPChecksum size 4,8 offset 202
+                     _IPPutHeader size 5,20 offset 202
+                         _SwapIPHeader size 2,0 offset 227
+                             _swaps size 2,2 offset 229
+                         _MACPutHeader size 5,0 offset 227
+                             _BankSel size 2,0 offset 233
+                                 _BFCReg size 1,0 offset 235
+                                 _BFSReg size 1,0 offset 235
+                             _WriteReg size 1,0 offset 233
+                             _MACPut size 0,0 offset 232
+                             _MACPutArray size 4,0 offset 232
+                         _MACPutArray size 4,0 offset 232
+                         _MACCalcTxChecksum size 4,2 offset 227
+                             _BankSel size 2,0 offset 233
+                                 _BFCReg size 1,0 offset 235
+                                 _BFSReg size 1,0 offset 235
+                             _WriteReg size 1,0 offset 233
+                             _BFSReg size 1,0 offset 235
+                             _ReadETHReg size 0,0 offset 233
+                         _MACSetTxBuffer size 2,0 offset 227
+                             _BankSel size 2,0 offset 233
+                                 _BFCReg size 1,0 offset 235
+                                 _BFSReg size 1,0 offset 235
+                             _WriteReg size 1,0 offset 233
+                     _MACPutArray size 4,0 offset 232
+                     _CalcIPBufferChecksum size 2,2 offset 202
+                         _MACGet size 0,0 offset 206
+                         _BankSel size 2,0 offset 233
+                             _BFCReg size 1,0 offset 235
+                             _BFSReg size 1,0 offset 235
+                         _ReadETHReg size 0,0 offset 233
+                         _WriteReg size 1,0 offset 233
+                         _BFSReg size 1,0 offset 235
+                     _MACPut size 0,0 offset 232
+                     _MACFlush size 0,12 offset 202
+                         _BankSel size 2,0 offset 233
+                             _BFCReg size 1,0 offset 235
+                             _BFSReg size 1,0 offset 235
+                         _WriteReg size 1,0 offset 233
+                         _ReadETHReg size 0,0 offset 233
+                         _BFSReg size 1,0 offset 235
+                         _BFCReg size 1,0 offset 235
+                         _MACGetArray size 4,0 offset 214
+                 lincr size 0,0 offset 78
+         _ICMPGet size 10,44 offset 6
+             _MACGetArray size 4,0 offset 214
+             _MACCalcRxChecksum size 4,2 offset 60
+                 _BankSel size 2,0 offset 233
+                     _BFCReg size 1,0 offset 235
+                     _BFSReg size 1,0 offset 235
+                 _WriteReg size 1,0 offset 233
+                 _BFSReg size 1,0 offset 235
+                 _ReadETHReg size 0,0 offset 233
+             _SwapICMPPacket size 2,0 offset 60
+                 _swaps size 2,2 offset 229
+         _MACIsTxReady size 0,0 offset 202
+             _ReadETHReg size 0,0 offset 233
+         _ICMPPut size 10,43 offset 6
+             _MACGetTxBuffer size 0,0 offset 202
+                 _ReadETHReg size 0,0 offset 233
+             _MACSetTxBuffer size 2,0 offset 227
+                 _BankSel size 2,0 offset 233
+                     _BFCReg size 1,0 offset 235
+                     _BFSReg size 1,0 offset 235
+                 _WriteReg size 1,0 offset 233
+             _memcpy size 6,0 offset 154
+             _SwapICMPPacket size 2,0 offset 60
+                 _swaps size 2,2 offset 229
+             _IPPutHeader size 5,20 offset 202
+                 _SwapIPHeader size 2,0 offset 227
+                     _swaps size 2,2 offset 229
+                 _MACPutHeader size 5,0 offset 227
+                     _BankSel size 2,0 offset 233
+                         _BFCReg size 1,0 offset 235
+                         _BFSReg size 1,0 offset 235
+                     _WriteReg size 1,0 offset 233
+                     _MACPut size 0,0 offset 232
+                     _MACPutArray size 4,0 offset 232
+                 _MACPutArray size 4,0 offset 232
+                 _MACCalcTxChecksum size 4,2 offset 227
+                     _BankSel size 2,0 offset 233
+                         _BFCReg size 1,0 offset 235
+                         _BFSReg size 1,0 offset 235
+                     _WriteReg size 1,0 offset 233
+                     _BFSReg size 1,0 offset 235
+                     _ReadETHReg size 0,0 offset 233
+                 _MACSetTxBuffer size 2,0 offset 227
+                     _BankSel size 2,0 offset 233
+                         _BFCReg size 1,0 offset 235
+                         _BFSReg size 1,0 offset 235
+                     _WriteReg size 1,0 offset 233
+             _MACPutArray size 4,0 offset 232
+             _MACCalcTxChecksum size 4,2 offset 227
+                 _BankSel size 2,0 offset 233
+                     _BFCReg size 1,0 offset 235
+                     _BFSReg size 1,0 offset 235
+                 _WriteReg size 1,0 offset 233
+                 _BFSReg size 1,0 offset 235
+                 _ReadETHReg size 0,0 offset 233
+             _MACFlush size 0,12 offset 202
+                 _BankSel size 2,0 offset 233
+                     _BFCReg size 1,0 offset 235
+                     _BFSReg size 1,0 offset 235
+                 _WriteReg size 1,0 offset 233
+                 _ReadETHReg size 0,0 offset 233
+                 _BFSReg size 1,0 offset 235
+                 _BFCReg size 1,0 offset 235
+                 _MACGetArray size 4,0 offset 214
+         _TCPTick size 0,8 offset 6
+             _TickGet size 0,0 offset 78
+             _MACIsTxReady size 0,0 offset 202
+                 _ReadETHReg size 0,0 offset 233
+             _MACSetTxBuffer size 2,0 offset 227
+                 _BankSel size 2,0 offset 233
+                     _BFCReg size 1,0 offset 235
+                     _BFSReg size 1,0 offset 235
+                 _WriteReg size 1,0 offset 233
+             _MACFlush size 0,12 offset 202
+                 _BankSel size 2,0 offset 233
+                     _BFCReg size 1,0 offset 235
+                     _BFSReg size 1,0 offset 235
+                 _WriteReg size 1,0 offset 233
+                 _ReadETHReg size 0,0 offset 233
+                 _BFSReg size 1,0 offset 235
+                 _BFCReg size 1,0 offset 235
+                 _MACGetArray size 4,0 offset 214
+             _MACDiscardTx size 0,0 offset 139
+             _CloseSocket size 2,0 offset 137
+                 _MACDiscardTx size 0,0 offset 139
+                 _MACDiscardRx size 0,2 offset 139
+                     _BFSReg size 1,0 offset 235
+                     _BankSel size 2,0 offset 233
+                         _BFCReg size 1,0 offset 235
+                         _BFSReg size 1,0 offset 235
+                     _WriteReg size 1,0 offset 233
+             _TransmitTCP size 18,38 offset 146
+                 _MACIsTxReady size 0,0 offset 202
+                     _ReadETHReg size 0,0 offset 233
+                 _MACGetTxBuffer size 0,0 offset 202
+                     _ReadETHReg size 0,0 offset 233
+                 _MACSetTxBuffer size 2,0 offset 227
+                     _BankSel size 2,0 offset 233
+                         _BFCReg size 1,0 offset 235
+                         _BFSReg size 1,0 offset 235
+                     _WriteReg size 1,0 offset 233
+                 _MACGetFreeRxSize size 0,4 offset 202
+                     _BankSel size 2,0 offset 233
+                         _BFCReg size 1,0 offset 235
+                         _BFSReg size 1,0 offset 235
+                     _ReadETHReg size 0,0 offset 233
+                 _SwapTCPHeader size 2,0 offset 202
+                     _swaps size 2,2 offset 229
+                     _swapl size 4,4 offset 204
+                 _swaps size 2,2 offset 229
+                 _CalcIPChecksum size 4,8 offset 202
+                 _IPPutHeader size 5,20 offset 202
+                     _SwapIPHeader size 2,0 offset 227
+                         _swaps size 2,2 offset 229
+                     _MACPutHeader size 5,0 offset 227
+                         _BankSel size 2,0 offset 233
+                             _BFCReg size 1,0 offset 235
+                             _BFSReg size 1,0 offset 235
+                         _WriteReg size 1,0 offset 233
+                         _MACPut size 0,0 offset 232
+                         _MACPutArray size 4,0 offset 232
+                     _MACPutArray size 4,0 offset 232
+                     _MACCalcTxChecksum size 4,2 offset 227
+                         _BankSel size 2,0 offset 233
+                             _BFCReg size 1,0 offset 235
+                             _BFSReg size 1,0 offset 235
+                         _WriteReg size 1,0 offset 233
+                         _BFSReg size 1,0 offset 235
+                         _ReadETHReg size 0,0 offset 233
+                     _MACSetTxBuffer size 2,0 offset 227
+                         _BankSel size 2,0 offset 233
+                             _BFCReg size 1,0 offset 235
+                             _BFSReg size 1,0 offset 235
+                         _WriteReg size 1,0 offset 233
+                 _MACPutArray size 4,0 offset 232
+                 _CalcIPBufferChecksum size 2,2 offset 202
+                     _MACGet size 0,0 offset 206
+                     _BankSel size 2,0 offset 233
+                         _BFCReg size 1,0 offset 235
+                         _BFSReg size 1,0 offset 235
+                     _ReadETHReg size 0,0 offset 233
+                     _WriteReg size 1,0 offset 233
+                     _BFSReg size 1,0 offset 235
+                 _MACPut size 0,0 offset 232
+                 _MACFlush size 0,12 offset 202
+                     _BankSel size 2,0 offset 233
+                         _BFCReg size 1,0 offset 235
+                         _BFSReg size 1,0 offset 235
+                     _WriteReg size 1,0 offset 233
+                     _ReadETHReg size 0,0 offset 233
+                     _BFSReg size 1,0 offset 235
+                     _BFCReg size 1,0 offset 235
+                     _MACGetArray size 4,0 offset 214
+             lincr size 0,0 offset 78
+         _DHCPTask size 0,15 offset 6
+             _UDPOpen size 6,3 offset 21
+                 _memcpy size 6,0 offset 154
+             _TickGet size 0,0 offset 78
+             _MACIsTxReady size 0,0 offset 202
+                 _ReadETHReg size 0,0 offset 233
+             __DHCPSend size 0,2 offset 21
+                 _UDPPut size 0,3 offset 23
+                     _MACGetTxBuffer size 0,0 offset 202
+                         _ReadETHReg size 0,0 offset 233
+                     _MACSetTxBuffer size 2,0 offset 227
+                         _BankSel size 2,0 offset 233
+                             _BFCReg size 1,0 offset 235
+                             _BFSReg size 1,0 offset 235
+                         _WriteReg size 1,0 offset 233
+                     _MACPut size 0,0 offset 232
+                     _UDPFlush size 0,10 offset 26
+                         _MACIsTxReady size 0,0 offset 202
+                             _ReadETHReg size 0,0 offset 233
+                         _swaps size 2,2 offset 229
+                         _MACSetTxBuffer size 2,0 offset 227
+                             _BankSel size 2,0 offset 233
+                                 _BFCReg size 1,0 offset 235
+                                 _BFSReg size 1,0 offset 235
+                             _WriteReg size 1,0 offset 233
+                         _IPPutHeader size 5,20 offset 202
+                             _SwapIPHeader size 2,0 offset 227
+                                 _swaps size 2,2 offset 229
+                             _MACPutHeader size 5,0 offset 227
+                                 _BankSel size 2,0 offset 233
+                                     _BFCReg size 1,0 offset 235
+                                     _BFSReg size 1,0 offset 235
+                                 _WriteReg size 1,0 offset 233
+                                 _MACPut size 0,0 offset 232
+                                 _MACPutArray size 4,0 offset 232
+                             _MACPutArray size 4,0 offset 232
+                             _MACCalcTxChecksum size 4,2 offset 227
+                                 _BankSel size 2,0 offset 233
+                                     _BFCReg size 1,0 offset 235
+                                     _BFSReg size 1,0 offset 235
+                                 _WriteReg size 1,0 offset 233
+                                 _BFSReg size 1,0 offset 235
+                                 _ReadETHReg size 0,0 offset 233
+                             _MACSetTxBuffer size 2,0 offset 227
+                                 _BankSel size 2,0 offset 233
+                                     _BFCReg size 1,0 offset 235
+                                     _BFSReg size 1,0 offset 235
+                                 _WriteReg size 1,0 offset 233
+                         _MACPutArray size 4,0 offset 232
+                         _MACFlush size 0,12 offset 202
+                             _BankSel size 2,0 offset 233
+                                 _BFCReg size 1,0 offset 235
+                                 _BFSReg size 1,0 offset 235
+                             _WriteReg size 1,0 offset 233
+                             _ReadETHReg size 0,0 offset 233
+                             _BFSReg size 1,0 offset 235
+                             _BFCReg size 1,0 offset 235
+                             _MACGetArray size 4,0 offset 214
+                 _UDPFlush size 0,10 offset 26
+                     _MACIsTxReady size 0,0 offset 202
+                         _ReadETHReg size 0,0 offset 233
+                     _swaps size 2,2 offset 229
+                     _MACSetTxBuffer size 2,0 offset 227
+                         _BankSel size 2,0 offset 233
+                             _BFCReg size 1,0 offset 235
+                             _BFSReg size 1,0 offset 235
+                         _WriteReg size 1,0 offset 233
+                     _IPPutHeader size 5,20 offset 202
+                         _SwapIPHeader size 2,0 offset 227
+                             _swaps size 2,2 offset 229
+                         _MACPutHeader size 5,0 offset 227
+                             _BankSel size 2,0 offset 233
+                                 _BFCReg size 1,0 offset 235
+                                 _BFSReg size 1,0 offset 235
+                             _WriteReg size 1,0 offset 233
+                             _MACPut size 0,0 offset 232
+                             _MACPutArray size 4,0 offset 232
+                         _MACPutArray size 4,0 offset 232
+                         _MACCalcTxChecksum size 4,2 offset 227
+                             _BankSel size 2,0 offset 233
+                                 _BFCReg size 1,0 offset 235
+                                 _BFSReg size 1,0 offset 235
+                             _WriteReg size 1,0 offset 233
+                             _BFSReg size 1,0 offset 235
+                             _ReadETHReg size 0,0 offset 233
+                         _MACSetTxBuffer size 2,0 offset 227
+                             _BankSel size 2,0 offset 233
+                                 _BFCReg size 1,0 offset 235
+                                 _BFSReg size 1,0 offset 235
+                             _WriteReg size 1,0 offset 233
+                     _MACPutArray size 4,0 offset 232
+                     _MACFlush size 0,12 offset 202
+                         _BankSel size 2,0 offset 233
+                             _BFCReg size 1,0 offset 235
+                             _BFSReg size 1,0 offset 235
+                         _WriteReg size 1,0 offset 233
+                         _ReadETHReg size 0,0 offset 233
+                         _BFSReg size 1,0 offset 235
+                         _BFCReg size 1,0 offset 235
+                         _MACGetArray size 4,0 offset 214
+             _UDPIsGetReady size 0,0 offset 21
+             __DHCPReceive size 0,9 offset 21
+                 _UDPGet size 2,0 offset 30
+                     _IPSetRxBuffer size 2,0 offset 138
+                         _MACSetRxBuffer size 2,2 offset 140
+                             _BankSel size 2,0 offset 233
+                                 _BFCReg size 1,0 offset 235
+                                 _BFSReg size 1,0 offset 235
+                             _WriteReg size 1,0 offset 233
+                     _MACGet size 0,0 offset 206
+                     _MACDiscardRx size 0,2 offset 139
+                         _BFSReg size 1,0 offset 235
+                         _BankSel size 2,0 offset 233
+                             _BFCReg size 1,0 offset 235
+                             _BFSReg size 1,0 offset 235
+                         _WriteReg size 1,0 offset 233
+                 _UDPDiscard size 0,0 offset 30
+                     _MACDiscardRx size 0,2 offset 139
+                         _BFSReg size 1,0 offset 235
+                         _BankSel size 2,0 offset 233
+                             _BFCReg size 1,0 offset 235
+                             _BFSReg size 1,0 offset 235
+                         _WriteReg size 1,0 offset 233
+             _DHCPReset size 0,0 offset 21
+                 _UDPClose size 0,0 offset 21
+             _UDPClose size 0,0 offset 21
+*    _HTTPServer size 0,1 offset 0
+*        _HTTPProcess size 0,133 offset 1
+             _TCPIsConnected size 0,0 offset 134
+             _TCPIsGetReady size 0,0 offset 134
+             _TCPGet size 2,2 offset 134
+                 _IPSetRxBuffer size 2,0 offset 138
+                     _MACSetRxBuffer size 2,2 offset 140
+                         _BankSel size 2,0 offset 233
+                             _BFCReg size 1,0 offset 235
+                             _BFSReg size 1,0 offset 235
+                         _WriteReg size 1,0 offset 233
+                 _MACDiscardRx size 0,2 offset 139
+                     _BFSReg size 1,0 offset 235
+                     _BankSel size 2,0 offset 233
+                         _BFCReg size 1,0 offset 235
+                         _BFSReg size 1,0 offset 235
+                     _WriteReg size 1,0 offset 233
+                 _MACGet size 0,0 offset 206
+*            _TCPDiscard size 0,2 offset 137
+*                _MACDiscardRx size 0,2 offset 139
+*                    _BFSReg size 1,0 offset 235
+*                    _BankSel size 2,0 offset 233
+*                        _BFCReg size 1,0 offset 235
+*                        _BFSReg size 1,0 offset 235
+                     _WriteReg size 1,0 offset 233
+             _HTTPParse size 8,8 offset 134
+                 _memcmp size 6,0 offset 154
+                 _strupr size 2,0 offset 154
+                 _memcpy size 6,0 offset 154
+             _HTTPExecCmd size 3,0 offset 134
+                 _memcpy size 6,0 offset 154
+             _MPFSOpen size 2,18 offset 134
+                 _strupr size 2,0 offset 154
+                 _memcpy size 6,0 offset 154
+                 _strlen size 2,0 offset 154
+                 _memcmp size 6,0 offset 154
+             _TCPIsPutReady size 0,0 offset 140
+                 _MACIsTxReady size 0,0 offset 202
+                     _ReadETHReg size 0,0 offset 233
+*            _TCPPut size 1,3 offset 140
+                 _MACGetTxBuffer size 0,0 offset 202
+                     _ReadETHReg size 0,0 offset 233
+*                _MACSetTxBuffer size 2,0 offset 227
+*                    _BankSel size 2,0 offset 233
+*                        _BFCReg size 1,0 offset 235
+*                        _BFSReg size 1,0 offset 235
+                     _WriteReg size 1,0 offset 233
+                 _MACPut size 0,0 offset 232
+*                _TCPFlush size 0,2 offset 144
+*                    _TransmitTCP size 18,38 offset 146
+                         _MACIsTxReady size 0,0 offset 202
+                             _ReadETHReg size 0,0 offset 233
+                         _MACGetTxBuffer size 0,0 offset 202
+                             _ReadETHReg size 0,0 offset 233
+*                        _MACSetTxBuffer size 2,0 offset 227
+*                            _BankSel size 2,0 offset 233
+*                                _BFCReg size 1,0 offset 235
+*                                _BFSReg size 1,0 offset 235
+                             _WriteReg size 1,0 offset 233
+*                        _MACGetFreeRxSize size 0,4 offset 202
+*                            _BankSel size 2,0 offset 233
+*                                _BFCReg size 1,0 offset 235
+*                                _BFSReg size 1,0 offset 235
+                             _ReadETHReg size 0,0 offset 233
+                         _SwapTCPHeader size 2,0 offset 202
+                             _swaps size 2,2 offset 229
+                             _swapl size 4,4 offset 204
+                         _swaps size 2,2 offset 229
+                         _CalcIPChecksum size 4,8 offset 202
+*                        _IPPutHeader size 5,20 offset 202
+                             _SwapIPHeader size 2,0 offset 227
+                                 _swaps size 2,2 offset 229
+*                            _MACPutHeader size 5,0 offset 227
+*                                _BankSel size 2,0 offset 233
+*                                    _BFCReg size 1,0 offset 235
+*                                    _BFSReg size 1,0 offset 235
+                                 _WriteReg size 1,0 offset 233
+                                 _MACPut size 0,0 offset 232
+*                                _MACPutArray size 4,0 offset 232
+*                            _MACPutArray size 4,0 offset 232
+*                            _MACCalcTxChecksum size 4,2 offset 227
+*                                _BankSel size 2,0 offset 233
+*                                    _BFCReg size 1,0 offset 235
+*                                    _BFSReg size 1,0 offset 235
+                                 _WriteReg size 1,0 offset 233
+*                                _BFSReg size 1,0 offset 235
+                                 _ReadETHReg size 0,0 offset 233
+*                            _MACSetTxBuffer size 2,0 offset 227
+*                                _BankSel size 2,0 offset 233
+*                                    _BFCReg size 1,0 offset 235
+*                                    _BFSReg size 1,0 offset 235
+                                 _WriteReg size 1,0 offset 233
+*                        _MACPutArray size 4,0 offset 232
+*                        _CalcIPBufferChecksum size 2,2 offset 202
+                             _MACGet size 0,0 offset 206
+*                            _BankSel size 2,0 offset 233
+*                                _BFCReg size 1,0 offset 235
+*                                _BFSReg size 1,0 offset 235
+                             _ReadETHReg size 0,0 offset 233
+                             _WriteReg size 1,0 offset 233
+*                            _BFSReg size 1,0 offset 235
+                         _MACPut size 0,0 offset 232
+*                        _MACFlush size 0,12 offset 202
+*                            _BankSel size 2,0 offset 233
+*                                _BFCReg size 1,0 offset 235
+*                                _BFSReg size 1,0 offset 235
+                             _WriteReg size 1,0 offset 233
+                             _ReadETHReg size 0,0 offset 233
+*                            _BFSReg size 1,0 offset 235
+*                            _BFCReg size 1,0 offset 235
+                             _MACGetArray size 4,0 offset 214
+*            _TCPFlush size 0,2 offset 144
+*                _TransmitTCP size 18,38 offset 146
+                     _MACIsTxReady size 0,0 offset 202
+                         _ReadETHReg size 0,0 offset 233
+                     _MACGetTxBuffer size 0,0 offset 202
+                         _ReadETHReg size 0,0 offset 233
+*                    _MACSetTxBuffer size 2,0 offset 227
+*                        _BankSel size 2,0 offset 233
+*                            _BFCReg size 1,0 offset 235
+*                            _BFSReg size 1,0 offset 235
+                         _WriteReg size 1,0 offset 233
+*                    _MACGetFreeRxSize size 0,4 offset 202
+*                        _BankSel size 2,0 offset 233
+*                            _BFCReg size 1,0 offset 235
+*                            _BFSReg size 1,0 offset 235
+                         _ReadETHReg size 0,0 offset 233
+                     _SwapTCPHeader size 2,0 offset 202
+                         _swaps size 2,2 offset 229
+                         _swapl size 4,4 offset 204
+                     _swaps size 2,2 offset 229
+                     _CalcIPChecksum size 4,8 offset 202
+*                    _IPPutHeader size 5,20 offset 202
+                         _SwapIPHeader size 2,0 offset 227
+                             _swaps size 2,2 offset 229
+*                        _MACPutHeader size 5,0 offset 227
+*                            _BankSel size 2,0 offset 233
+*                                _BFCReg size 1,0 offset 235
+*                                _BFSReg size 1,0 offset 235
+                             _WriteReg size 1,0 offset 233
+                             _MACPut size 0,0 offset 232
+*                            _MACPutArray size 4,0 offset 232
+*                        _MACPutArray size 4,0 offset 232
+*                        _MACCalcTxChecksum size 4,2 offset 227
+*                            _BankSel size 2,0 offset 233
+*                                _BFCReg size 1,0 offset 235
+*                                _BFSReg size 1,0 offset 235
+                             _WriteReg size 1,0 offset 233
+*                            _BFSReg size 1,0 offset 235
+                             _ReadETHReg size 0,0 offset 233
+*                        _MACSetTxBuffer size 2,0 offset 227
+*                            _BankSel size 2,0 offset 233
+*                                _BFCReg size 1,0 offset 235
+*                                _BFSReg size 1,0 offset 235
+                             _WriteReg size 1,0 offset 233
+*                    _MACPutArray size 4,0 offset 232
+*                    _CalcIPBufferChecksum size 2,2 offset 202
+                         _MACGet size 0,0 offset 206
+*                        _BankSel size 2,0 offset 233
+*                            _BFCReg size 1,0 offset 235
+*                            _BFSReg size 1,0 offset 235
+                         _ReadETHReg size 0,0 offset 233
+                         _WriteReg size 1,0 offset 233
+*                        _BFSReg size 1,0 offset 235
+                     _MACPut size 0,0 offset 232
+*                    _MACFlush size 0,12 offset 202
+*                        _BankSel size 2,0 offset 233
+*                            _BFCReg size 1,0 offset 235
+*                            _BFSReg size 1,0 offset 235
+                         _WriteReg size 1,0 offset 233
+                         _ReadETHReg size 0,0 offset 233
+*                        _BFSReg size 1,0 offset 235
+*                        _BFCReg size 1,0 offset 235
+                         _MACGetArray size 4,0 offset 214
+*            _SendFile size 2,4 offset 134
+                 _MPFSGet size 0,0 offset 140
+*                _TCPFlush size 0,2 offset 144
+*                    _TransmitTCP size 18,38 offset 146
+                         _MACIsTxReady size 0,0 offset 202
+                             _ReadETHReg size 0,0 offset 233
+                         _MACGetTxBuffer size 0,0 offset 202
+                             _ReadETHReg size 0,0 offset 233
+*                        _MACSetTxBuffer size 2,0 offset 227
+*                            _BankSel size 2,0 offset 233
+*                                _BFCReg size 1,0 offset 235
+*                                _BFSReg size 1,0 offset 235
+                             _WriteReg size 1,0 offset 233
+*                        _MACGetFreeRxSize size 0,4 offset 202
+*                            _BankSel size 2,0 offset 233
+*                                _BFCReg size 1,0 offset 235
+*                                _BFSReg size 1,0 offset 235
+                             _ReadETHReg size 0,0 offset 233
+                         _SwapTCPHeader size 2,0 offset 202
+                             _swaps size 2,2 offset 229
+                             _swapl size 4,4 offset 204
+                         _swaps size 2,2 offset 229
+                         _CalcIPChecksum size 4,8 offset 202
+*                        _IPPutHeader size 5,20 offset 202
+                             _SwapIPHeader size 2,0 offset 227
+                                 _swaps size 2,2 offset 229
+*                            _MACPutHeader size 5,0 offset 227
+*                                _BankSel size 2,0 offset 233
+*                                    _BFCReg size 1,0 offset 235
+*                                    _BFSReg size 1,0 offset 235
+                                 _WriteReg size 1,0 offset 233
+                                 _MACPut size 0,0 offset 232
+*                                _MACPutArray size 4,0 offset 232
+*                            _MACPutArray size 4,0 offset 232
+*                            _MACCalcTxChecksum size 4,2 offset 227
+*                                _BankSel size 2,0 offset 233
+*                                    _BFCReg size 1,0 offset 235
+*                                    _BFSReg size 1,0 offset 235
+                                 _WriteReg size 1,0 offset 233
+*                                _BFSReg size 1,0 offset 235
+                                 _ReadETHReg size 0,0 offset 233
+*                            _MACSetTxBuffer size 2,0 offset 227
+*                                _BankSel size 2,0 offset 233
+*                                    _BFCReg size 1,0 offset 235
+*                                    _BFSReg size 1,0 offset 235
+                                 _WriteReg size 1,0 offset 233
+*                        _MACPutArray size 4,0 offset 232
+*                        _CalcIPBufferChecksum size 2,2 offset 202
+                             _MACGet size 0,0 offset 206
+*                            _BankSel size 2,0 offset 233
+*                                _BFCReg size 1,0 offset 235
+*                                _BFSReg size 1,0 offset 235
+                             _ReadETHReg size 0,0 offset 233
+                             _WriteReg size 1,0 offset 233
+*                            _BFSReg size 1,0 offset 235
+                         _MACPut size 0,0 offset 232
+*                        _MACFlush size 0,12 offset 202
+*                            _BankSel size 2,0 offset 233
+*                                _BFCReg size 1,0 offset 235
+*                                _BFSReg size 1,0 offset 235
+                             _WriteReg size 1,0 offset 233
+                             _ReadETHReg size 0,0 offset 233
+*                            _BFSReg size 1,0 offset 235
+*                            _BFCReg size 1,0 offset 235
+                             _MACGetArray size 4,0 offset 214
+                 _hexatob size 2,0 offset 140
+                 _HTTPGetVar size 4,0 offset 140
+                     _strcpy size 4,0 offset 144
+*                _TCPPut size 1,3 offset 140
+                     _MACGetTxBuffer size 0,0 offset 202
+                         _ReadETHReg size 0,0 offset 233
+*                    _MACSetTxBuffer size 2,0 offset 227
+*                        _BankSel size 2,0 offset 233
+*                            _BFCReg size 1,0 offset 235
+*                            _BFSReg size 1,0 offset 235
+                         _WriteReg size 1,0 offset 233
+                     _MACPut size 0,0 offset 232
+*                    _TCPFlush size 0,2 offset 144
+*                        _TransmitTCP size 18,38 offset 146
+                             _MACIsTxReady size 0,0 offset 202
+                                 _ReadETHReg size 0,0 offset 233
+                             _MACGetTxBuffer size 0,0 offset 202
+                                 _ReadETHReg size 0,0 offset 233
+*                            _MACSetTxBuffer size 2,0 offset 227
+*                                _BankSel size 2,0 offset 233
+*                                    _BFCReg size 1,0 offset 235
+*                                    _BFSReg size 1,0 offset 235
+                                 _WriteReg size 1,0 offset 233
+*                            _MACGetFreeRxSize size 0,4 offset 202
+*                                _BankSel size 2,0 offset 233
+*                                    _BFCReg size 1,0 offset 235
+*                                    _BFSReg size 1,0 offset 235
+                                 _ReadETHReg size 0,0 offset 233
+                             _SwapTCPHeader size 2,0 offset 202
+                                 _swaps size 2,2 offset 229
+                                 _swapl size 4,4 offset 204
+                             _swaps size 2,2 offset 229
+                             _CalcIPChecksum size 4,8 offset 202
+*                            _IPPutHeader size 5,20 offset 202
+                                 _SwapIPHeader size 2,0 offset 227
+                                     _swaps size 2,2 offset 229
+*                                _MACPutHeader size 5,0 offset 227
+*                                    _BankSel size 2,0 offset 233
+*                                        _BFCReg size 1,0 offset 235
+*                                        _BFSReg size 1,0 offset 235
+                                     _WriteReg size 1,0 offset 233
+                                     _MACPut size 0,0 offset 232
+*                                    _MACPutArray size 4,0 offset 232
+*                                _MACPutArray size 4,0 offset 232
+*                                _MACCalcTxChecksum size 4,2 offset 227
+*                                    _BankSel size 2,0 offset 233
+*                                        _BFCReg size 1,0 offset 235
+*                                        _BFSReg size 1,0 offset 235
+                                     _WriteReg size 1,0 offset 233
+*                                    _BFSReg size 1,0 offset 235
+                                     _ReadETHReg size 0,0 offset 233
+*                                _MACSetTxBuffer size 2,0 offset 227
+*                                    _BankSel size 2,0 offset 233
+*                                        _BFCReg size 1,0 offset 235
+*                                        _BFSReg size 1,0 offset 235
+                                     _WriteReg size 1,0 offset 233
+*                            _MACPutArray size 4,0 offset 232
+*                            _CalcIPBufferChecksum size 2,2 offset 202
+                                 _MACGet size 0,0 offset 206
+*                                _BankSel size 2,0 offset 233
+*                                    _BFCReg size 1,0 offset 235
+*                                    _BFSReg size 1,0 offset 235
+                                 _ReadETHReg size 0,0 offset 233
+                                 _WriteReg size 1,0 offset 233
+*                                _BFSReg size 1,0 offset 235
+                             _MACPut size 0,0 offset 232
+*                            _MACFlush size 0,12 offset 202
+*                                _BankSel size 2,0 offset 233
+*                                    _BFCReg size 1,0 offset 235
+*                                    _BFSReg size 1,0 offset 235
+                                 _WriteReg size 1,0 offset 233
+                                 _ReadETHReg size 0,0 offset 233
+*                                _BFSReg size 1,0 offset 235
+*                                _BFCReg size 1,0 offset 235
+                                 _MACGetArray size 4,0 offset 214
+                 _TCPIsPutReady size 0,0 offset 140
+                     _MACIsTxReady size 0,0 offset 202
+                         _ReadETHReg size 0,0 offset 233
+             _MPFSClose size 0,0 offset 134
+*            _TCPDisconnect size 0,3 offset 134
+*                _CloseSocket size 2,0 offset 137
+                     _MACDiscardTx size 0,0 offset 139
+*                    _MACDiscardRx size 0,2 offset 139
+*                        _BFSReg size 1,0 offset 235
+*                        _BankSel size 2,0 offset 233
+*                            _BFCReg size 1,0 offset 235
+*                            _BFSReg size 1,0 offset 235
+                         _WriteReg size 1,0 offset 233
+*                _TCPDiscard size 0,2 offset 137
+*                    _MACDiscardRx size 0,2 offset 139
+*                        _BFSReg size 1,0 offset 235
+*                        _BankSel size 2,0 offset 233
+*                            _BFCReg size 1,0 offset 235
+*                            _BFSReg size 1,0 offset 235
+                         _WriteReg size 1,0 offset 233
+*                _TransmitTCP size 18,38 offset 146
+                     _MACIsTxReady size 0,0 offset 202
+                         _ReadETHReg size 0,0 offset 233
+                     _MACGetTxBuffer size 0,0 offset 202
+                         _ReadETHReg size 0,0 offset 233
+*                    _MACSetTxBuffer size 2,0 offset 227
+*                        _BankSel size 2,0 offset 233
+*                            _BFCReg size 1,0 offset 235
+*                            _BFSReg size 1,0 offset 235
+                         _WriteReg size 1,0 offset 233
+*                    _MACGetFreeRxSize size 0,4 offset 202
+*                        _BankSel size 2,0 offset 233
+*                            _BFCReg size 1,0 offset 235
+*                            _BFSReg size 1,0 offset 235
+                         _ReadETHReg size 0,0 offset 233
+                     _SwapTCPHeader size 2,0 offset 202
+                         _swaps size 2,2 offset 229
+                         _swapl size 4,4 offset 204
+                     _swaps size 2,2 offset 229
+                     _CalcIPChecksum size 4,8 offset 202
+*                    _IPPutHeader size 5,20 offset 202
+                         _SwapIPHeader size 2,0 offset 227
+                             _swaps size 2,2 offset 229
+*                        _MACPutHeader size 5,0 offset 227
+*                            _BankSel size 2,0 offset 233
+*                                _BFCReg size 1,0 offset 235
+*                                _BFSReg size 1,0 offset 235
+                             _WriteReg size 1,0 offset 233
+                             _MACPut size 0,0 offset 232
+*                            _MACPutArray size 4,0 offset 232
+*                        _MACPutArray size 4,0 offset 232
+*                        _MACCalcTxChecksum size 4,2 offset 227
+*                            _BankSel size 2,0 offset 233
+*                                _BFCReg size 1,0 offset 235
+*                                _BFSReg size 1,0 offset 235
+                             _WriteReg size 1,0 offset 233
+*                            _BFSReg size 1,0 offset 235
+                             _ReadETHReg size 0,0 offset 233
+*                        _MACSetTxBuffer size 2,0 offset 227
+*                            _BankSel size 2,0 offset 233
+*                                _BFCReg size 1,0 offset 235
+*                                _BFSReg size 1,0 offset 235
+                             _WriteReg size 1,0 offset 233
+*                    _MACPutArray size 4,0 offset 232
+*                    _CalcIPBufferChecksum size 2,2 offset 202
+                         _MACGet size 0,0 offset 206
+*                        _BankSel size 2,0 offset 233
+*                            _BFCReg size 1,0 offset 235
+*                            _BFSReg size 1,0 offset 235
+                         _ReadETHReg size 0,0 offset 233
+                         _WriteReg size 1,0 offset 233
+*                        _BFSReg size 1,0 offset 235
+                     _MACPut size 0,0 offset 232
+*                    _MACFlush size 0,12 offset 202
+*                        _BankSel size 2,0 offset 233
+*                            _BFCReg size 1,0 offset 235
+*                            _BFSReg size 1,0 offset 235
+                         _WriteReg size 1,0 offset 233
+                         _ReadETHReg size 0,0 offset 233
+*                        _BFSReg size 1,0 offset 235
+*                        _BFCReg size 1,0 offset 235
+                         _MACGetArray size 4,0 offset 214
+     _ProcessIO size 0,0 offset 0
+         _itoa size 4,2 offset 35
+             lwdiv size 0,0 offset 41
+             lwmul size 0,0 offset 41
+     _putrsUSART size 2,0 offset 28
+         _BusyUSART size 0,0 offset 37
+         _WriteUSART size 0,0 offset 37
+     _DisplayIPValue size 2,5 offset 28
+         _itoa size 4,2 offset 35
+             lwdiv size 0,0 offset 41
+             lwmul size 0,0 offset 41
+         _putsUSART size 2,0 offset 35
+             _BusyUSART size 0,0 offset 37
+             _WriteUSART size 0,0 offset 37
+         _BusyUSART size 0,0 offset 37
+         _WriteUSART size 0,0 offset 37
+*    _AnnounceIP size 0,12 offset 0
+         _UDPOpen size 6,3 offset 21
+             _memcpy size 6,0 offset 154
+         _MACIsTxReady size 0,0 offset 202
+             _ReadETHReg size 0,0 offset 233
+         _UDPPut size 0,3 offset 23
+             _MACGetTxBuffer size 0,0 offset 202
+                 _ReadETHReg size 0,0 offset 233
+             _MACSetTxBuffer size 2,0 offset 227
+                 _BankSel size 2,0 offset 233
+                     _BFCReg size 1,0 offset 235
+                     _BFSReg size 1,0 offset 235
+                 _WriteReg size 1,0 offset 233
+             _MACPut size 0,0 offset 232
+             _UDPFlush size 0,10 offset 26
+                 _MACIsTxReady size 0,0 offset 202
+                     _ReadETHReg size 0,0 offset 233
+                 _swaps size 2,2 offset 229
+                 _MACSetTxBuffer size 2,0 offset 227
+                     _BankSel size 2,0 offset 233
+                         _BFCReg size 1,0 offset 235
+                         _BFSReg size 1,0 offset 235
+                     _WriteReg size 1,0 offset 233
+                 _IPPutHeader size 5,20 offset 202
+                     _SwapIPHeader size 2,0 offset 227
+                         _swaps size 2,2 offset 229
+                     _MACPutHeader size 5,0 offset 227
+                         _BankSel size 2,0 offset 233
+                             _BFCReg size 1,0 offset 235
+                             _BFSReg size 1,0 offset 235
+                         _WriteReg size 1,0 offset 233
+                         _MACPut size 0,0 offset 232
+                         _MACPutArray size 4,0 offset 232
+                     _MACPutArray size 4,0 offset 232
+                     _MACCalcTxChecksum size 4,2 offset 227
+                         _BankSel size 2,0 offset 233
+                             _BFCReg size 1,0 offset 235
+                             _BFSReg size 1,0 offset 235
+                         _WriteReg size 1,0 offset 233
+                         _BFSReg size 1,0 offset 235
+                         _ReadETHReg size 0,0 offset 233
+                     _MACSetTxBuffer size 2,0 offset 227
+                         _BankSel size 2,0 offset 233
+                             _BFCReg size 1,0 offset 235
+                             _BFSReg size 1,0 offset 235
+                         _WriteReg size 1,0 offset 233
+                 _MACPutArray size 4,0 offset 232
+                 _MACFlush size 0,12 offset 202
+                     _BankSel size 2,0 offset 233
+                         _BFCReg size 1,0 offset 235
+                         _BFSReg size 1,0 offset 235
+                     _WriteReg size 1,0 offset 233
+                     _ReadETHReg size 0,0 offset 233
+                     _BFSReg size 1,0 offset 235
+                     _BFCReg size 1,0 offset 235
+                     _MACGetArray size 4,0 offset 214
+         _btohexa_high size 0,0 offset 12
+         _btohexa_low size 0,0 offset 12
+         _UDPFlush size 0,10 offset 26
+             _MACIsTxReady size 0,0 offset 202
+                 _ReadETHReg size 0,0 offset 233
+             _swaps size 2,2 offset 229
+             _MACSetTxBuffer size 2,0 offset 227
+                 _BankSel size 2,0 offset 233
+                     _BFCReg size 1,0 offset 235
+                     _BFSReg size 1,0 offset 235
+                 _WriteReg size 1,0 offset 233
+             _IPPutHeader size 5,20 offset 202
+                 _SwapIPHeader size 2,0 offset 227
+                     _swaps size 2,2 offset 229
+                 _MACPutHeader size 5,0 offset 227
+                     _BankSel size 2,0 offset 233
+                         _BFCReg size 1,0 offset 235
+                         _BFSReg size 1,0 offset 235
+                     _WriteReg size 1,0 offset 233
+                     _MACPut size 0,0 offset 232
+                     _MACPutArray size 4,0 offset 232
+                 _MACPutArray size 4,0 offset 232
+                 _MACCalcTxChecksum size 4,2 offset 227
+                     _BankSel size 2,0 offset 233
+                         _BFCReg size 1,0 offset 235
+                         _BFSReg size 1,0 offset 235
+                     _WriteReg size 1,0 offset 233
+                     _BFSReg size 1,0 offset 235
+                     _ReadETHReg size 0,0 offset 233
+                 _MACSetTxBuffer size 2,0 offset 227
+                     _BankSel size 2,0 offset 233
+                         _BFCReg size 1,0 offset 235
+                         _BFSReg size 1,0 offset 235
+                     _WriteReg size 1,0 offset 233
+             _MACPutArray size 4,0 offset 232
+             _MACFlush size 0,12 offset 202
+                 _BankSel size 2,0 offset 233
+                     _BFCReg size 1,0 offset 235
+                     _BFSReg size 1,0 offset 235
+                 _WriteReg size 1,0 offset 233
+                 _ReadETHReg size 0,0 offset 233
+                 _BFSReg size 1,0 offset 235
+                 _BFCReg size 1,0 offset 235
+                 _MACGetArray size 4,0 offset 214
+         _UDPClose size 0,0 offset 21
+*_HighISR size 0,0 offset 236
+*    _TickUpdate size 0,0 offset 236
+
+		Name          Link     Load   Length Selector Space Scale
+C:\DOCUME~1\c12128\LOCALS~1\Temp\sr0.obj
+		reset_vec        0        0        4       0     0
+		end_init        62       62       16       C     0
+		init            18       18       4A       C     0
+C:\Work\MCHPTCPStack\MCHPTCPStack 3.60\Source\Announce.obj
+		temp             0        0        8       0     1
+		text         1B67A    1B67A      1E2    DB3D     0
+C:\Work\MCHPTCPStack\MCHPTCPStack 3.60\Source\ARP.obj
+		temp             0        0        8       0     1
+		text         1BF48    1BF48      2B4    DFA4     0
+C:\Work\MCHPTCPStack\MCHPTCPStack 3.60\Source\ARPTsk.obj
+		temp             0        0        4       0     1
+		bigbss         EF9      EF9        1     EF9     1
+		text         1B378    1B378       6A    D9BC     0
+C:\Work\MCHPTCPStack\MCHPTCPStack 3.60\Source\Delay.obj
+		temp             0        0        4       0     1
+		text         1B18C    1B18C       44    D8C6     0
+C:\Work\MCHPTCPStack\MCHPTCPStack 3.60\Source\DHCP.obj
+		ibigdata         4        4        3       0     0
+		bigdata        EF6      EF6        3     EF6     1
+		temp             0        0        8       0     1
+		bigbss         EFA      EFA        1     EF9     1
+		bss            192      192       18      14     1
+		text         1D490    1D490      8D0    EA48     0
+C:\Work\MCHPTCPStack\MCHPTCPStack 3.60\Source\ENC28J60.obj
+		temp             0        0        6       0     1
+		bigbss         EFB      EFB        4     EF9     1
+		bss            14D      14D       27      14     1
+		text           1E2      1E2      DFC      F1     0
+C:\Work\MCHPTCPStack\MCHPTCPStack 3.60\Source\Helpers.obj
+		temp             0        0        6       0     1
+		text         1C1FC    1C1FC      336    E0FE     0
+C:\Work\MCHPTCPStack\MCHPTCPStack 3.60\Source\HTTP.obj
+		const         1000     1000      1C6     800     0
+		temp             0        0        4       0     1
+		idata          FDE      FDE        4     7EF     0
+		data           100      100        4      14     1
+		bss            174      174       1E      14     1
+		text         1DD60    1DD60      984    EEB0     0
+C:\Work\MCHPTCPStack\MCHPTCPStack 3.60\Source\ICMP.obj
+		temp             0        0        1       0     1
+		text         1B85C    1B85C      214    DC2E     0
+C:\Work\MCHPTCPStack\MCHPTCPStack 3.60\Source\IP.obj
+		temp             0        0        2       0     1
+		bigbss         EFF      EFF        1     EF9     1
+		bss            1C2      1C2        2      14     1
+		text         1BCBA    1BCBA      28E    DE5D     0
+C:\Work\MCHPTCPStack\MCHPTCPStack 3.60\Source\LCDBlocking.obj
+		
+C:\Work\MCHPTCPStack\MCHPTCPStack 3.60\Source\MainDemo.obj
+		intcode          8        8        C       4     0
+		intsave_r      F43      F43       1D     F43     1
+		const         11C6     11C6      2E7     800     0
+		config      300000   300000        8  300000     0
+		temp             0        0        F       0     1
+		bigbss         F00      F00       1D     EF9     1
+		idata          FE2      FE2       1D     7EF     0
+		data           104      104       1D      14     1
+		bss             10       10        4      10     1
+		text         1CC50    1CC50      840    E628     0
+C:\Work\MCHPTCPStack\MCHPTCPStack 3.60\Source\MPFS.obj
+		temp             0        0        2       0     1
+		bigbss         F1D      F1D        3     EF9     1
+		bss            1BA      1BA        4      14     1
+		text         1B4AC    1B4AC      1CE    DA56     0
+C:\Work\MCHPTCPStack\MCHPTCPStack 3.60\Source\MPFSImg.obj
+		const         14AD     14AD     63CF     800     0
+C:\Work\MCHPTCPStack\MCHPTCPStack 3.60\Source\StackTsk.obj
+		temp             0        0        4       0     1
+		bigbss         F20      F20       22     EF9     1
+		bss            1AA      1AA       10      14     1
+		text         1BA70    1BA70      24A    DD38     0
+C:\Work\MCHPTCPStack\MCHPTCPStack 3.60\Source\TCP.obj
+		temp             0        0        C       0     1
+		bss            200      200       F0     200     1
+		text         1E6E4    1E6E4     191C    F372     0
+C:\Work\MCHPTCPStack\MCHPTCPStack 3.60\Source\Tick.obj
+		temp             0        0        4       0     1
+		bss            1BE      1BE        4      14     1
+		text         1B1D0    1B1D0       48    D8E8     0
+C:\Work\MCHPTCPStack\MCHPTCPStack 3.60\Source\UART.obj
+		temp             0        0        1       0     1
+		text           110      110       D2      88     0
+C:\Work\MCHPTCPStack\MCHPTCPStack 3.60\Source\UDP.obj
+		temp             0        0        4       0     1
+		bigbss         F42      F42        1     EF9     1
+		bss            121      121       2C      14     1
+		text         1C532    1C532      71E    E299     0
+
+C:\Program Files\HI-TECH Software\PICC-18\9.50\lib\pic82--p.lib
+
+C:\Program Files\HI-TECH Software\PICC-18\9.50\lib\pic82l-c.lib
+isdigit.obj     text         1B156    1B156       1A    D8AB     0
+memcpy.obj      temp             0        0        2       0     1
+		text         1B2AE    1B2AE       64    D957     0
+strcpy.obj      temp             0        0        2       0     1
+		text         1B218    1B218       4A    D90C     0
+strlen.obj      temp             0        0        2       0     1
+		text         1B262    1B262       4C    D931     0
+atoi.obj        temp             0        0        6       0     1
+		text         1B3E2    1B3E2       CA    D9F1     0
+btemp0.obj      temp             0        0        1       0     1
+btemp10.obj     temp             0        0        B       0     1
+btemp11.obj     temp             0        0        C       0     1
+btemp12.obj     temp             0        0        D       0     1
+btemp13.obj     temp             0        0        E       0     1
+btemp14.obj     temp             0        0        F       0     1
+btemp1.obj      temp             0        0        2       0     1
+btemp2.obj      temp             0        0        3       0     1
+btemp3.obj      temp             0        0        4       0     1
+btemp4.obj      temp             0        0        5       0     1
+btemp5.obj      temp             0        0        6       0     1
+btemp6.obj      temp             0        0        7       0     1
+btemp7.obj      temp             0        0        8       0     1
+btemp8.obj      temp             0        0        9       0     1
+btemp9.obj      temp             0        0        A       0     1
+lincr.obj       temp             0        0        4       0     1
+		text         1B170    1B170       1C    D8B8     0
+memcmp.obj      temp             0        0        2       0     1
+		text            9C       9C       74      4E     0
+sbsr0.obj       rbss             F        F        1       0     1
+struct.obj      text         1B14C    1B14C        A    D8A6     0
+wdiv.obj        temp             0        0        7       0     1
+		text         1B312    1B312       66    D989     0
+wmul.obj        temp             0        0        6       0     1
+		text            7E       7E       1E      3F     0
+
+C:\Program Files\HI-TECH Software\PICC-18\9.50\lib\pic080pm.lib
+
+COMMON          param           14       14       EC      14     1
+
+TOTAL		Name          Link     Load   Length
+	CLASS	CODE     
+		reset_vec        0        0        4
+		intcode          8        8        C
+		ibigdata         4        4        3
+		end_init        62       62       16
+		init            18       18       4A
+		const         1000     1000     687C
+		idata          FDE      FDE       21
+		text         1B67A    1B67A      1E2
+		text         1BF48    1BF48      2B4
+		text         1B378    1B378       6A
+		text         1B18C    1B18C       44
+		text         1D490    1D490      8D0
+		text           1E2      1E2      DFC
+		text         1C1FC    1C1FC      336
+		text         1DD60    1DD60      984
+		text         1B85C    1B85C      214
+		text         1BCBA    1BCBA      28E
+		text         1CC50    1CC50      840
+		text         1B4AC    1B4AC      1CE
+		text         1BA70    1BA70      24A
+		text         1E6E4    1E6E4     191C
+		text         1B1D0    1B1D0       48
+		text           110      110       D2
+		text         1C532    1C532      71E
+		text         1B156    1B156       1A
+		text         1B2AE    1B2AE       64
+		text         1B218    1B218       4A
+		text         1B262    1B262       4C
+		text         1B3E2    1B3E2       CA
+		text         1B170    1B170       1C
+		text            9C       9C       74
+		text         1B14C    1B14C        A
+		text         1B312    1B312       66
+		text            7E       7E       1E
+
+	CLASS	RAM      
+		param           14       14       EC
+		data           100      100       21
+		bss            192      192       18
+		bss            14D      14D       27
+		bss            174      174       1E
+		bss            1C2      1C2        2
+		bss             10       10        4
+		bss            1BA      1BA        4
+		bss            1AA      1AA       10
+		bss            200      200       F0
+		bss            1BE      1BE        4
+		bss            121      121       2C
+
+	CLASS	BIGRAM   
+		bigdata        EF6      EF6        3
+		intsave_r      F43      F43       1D
+		bigbss         EF9      EF9       4A
+
+	CLASS	COMRAM   
+		rbss             F        F        1
+		temp             0        0        F
+
+	CLASS	NVRAM    
+
+	CLASS	CONFIG   
+		config      300000   300000        8
+
+	CLASS	IDLOC    
+
+	CLASS	EEDATA   
+
+	CLASS	FARRAM   
+
+
+
+SEGMENTS	Name		Load	Length	 Top	Selector    Space Class
+
+		temp            000000	000010	000010	       0       1  COMRAM  
+		reset_vec       000000	000007	000007	       0       0  CODE    
+		intcode         000008	00000C	000014	       4       0  CODE    
+		bss             000010	000004	000014	      10       1  RAM     
+		param           000014	0001B0	0001C4	      14       1  RAM     
+		intcodelo       000018	000060	000078	       C       0  CODE    
+		text            00007E	00001E	00009C	      3F       0  CODE    
+		text            00009C	000074	000110	      4E       0  CODE    
+		text            000110	0000D2	0001E2	      88       0  CODE    
+		text            0001E2	000DFC	000FDE	      F1       0  CODE    
+		bss             000200	0000F0	0002F0	     200       1  RAM     
+		bigdata         000EF6	000003	000EF9	     EF6       1  BIGRAM  
+		bigbss          000EF9	00004A	000F43	     EF9       1  BIGRAM  
+		intsave_regs    000F43	00001D	000F60	     F43       1  BIGRAM  
+		idata           000FDE	000021	000FFF	     7EF       0  CODE    
+		const           001000	00687C	00787C	     800       0  CODE    
+		text            01B14C	00000A	01B156	    D8A6       0  CODE    
+		text            01B156	00001A	01B170	    D8AB       0  CODE    
+		text            01B170	00001C	01B18C	    D8B8       0  CODE    
+		text            01B18C	000044	01B1D0	    D8C6       0  CODE    
+		text            01B1D0	000048	01B218	    D8E8       0  CODE    
+		text            01B218	00004A	01B262	    D90C       0  CODE    
+		text            01B262	00004C	01B2AE	    D931       0  CODE    
+		text            01B2AE	000064	01B312	    D957       0  CODE    
+		text            01B312	000066	01B378	    D989       0  CODE    
+		text            01B378	00006A	01B3E2	    D9BC       0  CODE    
+		text            01B3E2	0000CA	01B4AC	    D9F1       0  CODE    
+		text            01B4AC	0001CE	01B67A	    DA56       0  CODE    
+		text            01B67A	0001E2	01B85C	    DB3D       0  CODE    
+		text            01B85C	000214	01BA70	    DC2E       0  CODE    
+		text            01BA70	00024A	01BCBA	    DD38       0  CODE    
+		text            01BCBA	00028E	01BF48	    DE5D       0  CODE    
+		text            01BF48	0002B4	01C1FC	    DFA4       0  CODE    
+		text            01C1FC	000336	01C532	    E0FE       0  CODE    
+		text            01C532	00071E	01CC50	    E299       0  CODE    
+		text            01CC50	000840	01D490	    E628       0  CODE    
+		text            01D490	0008D0	01DD60	    EA48       0  CODE    
+		text            01DD60	000984	01E6E4	    EEB0       0  CODE    
+		text            01E6E4	00191C	020000	    F372       0  CODE    
+		config          300000	000008	300008	  300000       0  CONFIG  
+
+
+UNUSED ADDRESS RANGES
+
+	BIGRAM           0001C4-0001FF
+	                 0002F0-000EF5
+	CODE             000007-000007
+	                 000014-000017
+	                 000078-00007D
+	                 000FFF-000FFF
+	                 00787C-01B14B
+	CONFIG           300008-30000D
+	EEDATA           F00000-F003FF
+	IDLOC            200000-200007
+	RAM              0001C4-0001FF
+	                 0002F0-000EF5
+
+                                  Symbol Table
+
+?_ARPGet                  param        000025
+?_ARPPut                  param        000025
+?_CalcIPBufferChecksum    param        0000DE
+?_CalcIPChecksum          param        0000DE
+?_DelayMs                 param        000015
+?_HTTPExecCmd             param        00009A
+?_HTTPGetVar              param        0000A0
+?_ICMPGet                 param        00001A
+?_ICMPPut                 param        00001A
+?_IPGetHeader             param        00001A
+?_IPPutHeader             param        0000DE
+?_IPSetRxBuffer           param        00009E
+?_MACCalcRxChecksum       param        000050
+?_MACCalcTxChecksum       param        0000F7
+?_MACGetArray             param        0000EA
+?_MACGetHeader            param        00001A
+?_MACPutArray             param        0000FC
+?_MACPutHeader            param        0000F7
+?_MACSetRxBuffer          param        0000A0
+?_MACSetTxBuffer          param        0000F7
+?_MPFSOpen                param        00009A
+?_MPFSSeek                param        000014
+?_ReadStringUART          param        000030
+?_StringToIPAddress       param        000030
+?_TCPGet                  param        00009A
+?_TCPGetArray             param        000014
+?_TCPListen               param        000015
+?_TCPProcess              param        00001A
+?_TCPPut                  param        0000A0
+?_UDPGet                  param        000032
+?_UDPOpen                 param        000029
+?_UDPProcess              param        00001A
+?_WritePHYReg             param        000018
+?_atoi                    param        000037
+?_getsUSART               param        000014
+?_hexatob                 param        0000A0
+?_itoa                    param        000037
+?_memcmp                  param        0000AE
+?_memcpy                  param        0000AE
+?_putrsUSART              param        000030
+?_putsUSART               param        000037
+?_strcpy                  param        0000A4
+?_strlen                  param        0000AE
+?_strupr                  param        0000AE
+?_swapl                   param        0000E0
+?_swaps                   param        0000F9
+?a_ARPGet                 param        000029
+?a_ARPProcess             param        00001A
+?a_ARPPut                 param        000028
+?a_AnnounceIP             param        000014
+?a_CalcIPBufferChecksum   param        0000E0
+?a_CalcIPChecksum         param        0000E2
+?a_DHCPTask               param        00001A
+?a_ExecuteMenuChoice      param        000015
+?a_GetMenuChoice          param        000015
+?a_HTTPInit               param        000014
+?a_HTTPServer             param        000014
+?a_ICMPGet                param        000024
+?a_ICMPPut                param        000024
+?a_IPGetHeader            param        000022
+?a_IPPutHeader            param        0000E3
+?a_MACCalcRxChecksum      param        000054
+?a_MACCalcTxChecksum      param        0000FB
+?a_MACDiscardRx           param        00009F
+?a_MACFlush               param        0000DE
+?a_MACGetFreeRxSize       param        0000DE
+?a_MACGetHeader           param        00001E
+?a_MACInit                param        000014
+?a_MACSetDuplex           param        000015
+?a_MACSetRxBuffer         param        0000A2
+?a_MPFSOpen               param        00009C
+?a_ReadPHYReg             param        00001A
+?a_ReadStringUART         param        000033
+?a_StackTask              param        000014
+?a_StringToIPAddress      param        000034
+?a_TCPDiscard             param        00009D
+?a_TCPDisconnect          param        00009A
+?a_TCPFlush               param        0000A4
+?a_TCPGet                 param        00009C
+?a_TCPGetArray            param        000014
+?a_TCPProcess             param        000020
+?a_TCPPut                 param        0000A1
+?a_TCPTick                param        00001A
+?a_UDPFlush               param        00002E
+?a_UDPOpen                param        00002F
+?a_UDPProcess             param        000020
+?a_UDPPut                 param        00002B
+?a_WritePHYReg            param        00001A
+?a_atoi                   param        000039
+?a_itoa                   param        00003B
+?a_swapl                  param        0000E4
+?a_swaps                  param        0000FB
+_ARPGet                   text         01BF4A
+_ARPInit                  text         01B378
+_ARPProcess               text         01B37E
+_ARPPut                   text         01C018
+_AnnounceIP               text         01B67A
+_AppConfig                data         000104
+_BusyUSART                text         000110
+_CMD_UNKNOWN_PAGE         const        0011EF
+_COMMANDS_OK_PAGE         const        0011DA
+_CONFIG_UPDATE_PAGE       const        0011E4
+_CRLF                     const        0011D7
+_CalcIPBufferChecksum     text         000BA4
+_CalcIPChecksum           text         01C444
+_CloseUSART               text         00011A
+_CurrentPacketLocation    bss          00014D
+_CurrentTxBuffer          bigbss       000EFB
+_DHCPBindCount            bigbss       000EFA
+_DHCPReset                text         01D490
+_DHCPState                bigdata      000EF8
+_DHCPTask                 text         01D4BE
+_DataRdyUSART             text         000128
+_DelayMs                  text         01B18E
+_ENCRevID                 bigbss       000EFC
+_ExecuteMenuChoice        text         01D2A2
+_GetCLKOUT                text         000FCE
+_GetMenuChoice            text         01D282
+_HTTPExecCmd              text         01CF18
+_HTTPGetVar               text         01CF90
+_HTTPInit                 text         01DD60
+_HTTPServer               text         01DDA4
+_HTTP_DEFAULT_FILE_STRING const        00116E
+_HTTP_GET_STRING          const        00116A
+_HTTP_HEADER_END_STRING   const        001165
+_HTTP_OK_NO_CACHE_STRING  const        0010E0
+_HTTP_OK_STRING           const        0010C0
+_HighISR                  text         01CC50
+_ICMPGet                  text         01B85E
+_ICMPPut                  text         01B900
+_IPGetHeader              text         01BCBC
+_IPPutHeader              text         01BDA6
+_IPSetRxBuffer            text         01BEA4
+_InvalidInputMsg          const        00135C
+_LastTXedBuffer           bigbss       000EFD
+_MACCalcRxChecksum        text         000A42
+_MACCalcTxChecksum        text         000B00
+_MACDiscardRx             text         0004C4
+_MACDiscardTx             text         00049E
+_MACFlush                 text         0007AC
+_MACGet                   text         000C80
+_MACGetArray              text         000CA6
+_MACGetFreeRxSize         text         00052C
+_MACGetHeader             text         0005F6
+_MACGetTxBuffer           text         00043A
+_MACInit                  text         0001E2
+_MACIsLinked              text         0003D6
+_MACIsTxReady             text         0003E6
+_MACPowerDown             text         000F78
+_MACPowerUp               text         000FA0
+_MACPut                   text         000CF2
+_MACPutArray              text         000D1A
+_MACPutHeader             text         0006EA
+_MACSetDuplex             text         000EF8
+_MACSetRxBuffer           text         000980
+_MACSetTxBuffer           text         0009E0
+_MPFSClose                text         01B5AE
+_MPFSFormat               text         01B62E
+_MPFSGet                  text         01B5C4
+_MPFSInit                 text         01B4AC
+_MPFSOpen                 text         01B4B8
+_MPFSPut                  text         01B63A
+_MPFSPutEnd               text         01B63C
+_MPFSSeek                 text         01B648
+_MPFS_Start               const        00775F
+_NewIP                    const        0011C6
+_NextPacketLocation       bss          00014F
+_ReadPHYReg               text         000DB6
+_ReadStringUART           text         01C1FE
+_ReadUSART                text         000132
+_SetCLKOUT                text         000FB6
+_StackInit                text         01BA70
+_StackTask                text         01BA88
+_StringToIPAddress        text         01D1D2
+_TCB                      bss          000200
+_TCPDiscard               text         01EBD4
+_TCPDisconnect            text         01E85C
+_TCPFlush                 text         01E944
+_TCPGet                   text         01ECAE
+_TCPGetArray              text         01EC1C
+_TCPInit                  text         01E6E4
+_TCPIsConnected           text         01E83E
+_TCPIsGetReady            text         01ED5E
+_TCPIsPutReady            text         01EA7C
+_TCPListen                text         01E796
+_TCPProcess               text         01F0D2
+_TCPPut                   text         01EACC
+_TCPTick                  text         01ED7C
+_TickCount                bss          0001BE
+_TickGet                  text         01B1E6
+_TickInit                 text         01B1D0
+_TickUpdate               text         01B1F8
+_UDPClose                 text         01C61E
+_UDPDiscard               text         01C912
+_UDPFlush                 text         01C744
+_UDPGet                   text         01C878
+_UDPInit                  text         01C532
+_UDPIsGetReady            text         01C854
+_UDPOpen                  text         01C568
+_UDPProcess               text         01C94A
+_UDPPut                   text         01C638
+_UDPSocketInfo            bss          000121
+_WasDiscarded             bigbss       000EFE
+_WritePHYReg              text         000EA2
+_WriteUSART               text         000136
+__Bnvbit                  nvbit        00000F
+__Brbit                   rbit         000010
+__HRAM                    (abs)        0002F0
+__Hbigbss                 bigbss       000F43
+__Hbigdata                bigdata      000EF9
+__Hbss                    bss          000008
+__Hclrtext                clrtext      000008
+__Hconfig                 config       300008
+__Hconst                  const        00787C
+__Hdata                   data         000121
+__Heeprom_data            eeprom_data  F00000
+__Hend_init               end_init     000078
+__Hfarbss                 farbss       000000
+__Hfardata                fardata      000000
+__Hibigdata               ibigdata     000007
+__Hidata                  idata        000FFF
+__Hidloc                  idloc        200000
+__Hifardata               ifardata     000008
+__Hinit                   init         000062
+__Hintcode                intcode      000014
+__Hintcodelo              intcodelo    000018
+__Hintentry               intentry     000008
+__Hintret                 intret       000008
+__Hintsave_regs           intsave_regs 000F60
+__Hirdata                 irdata       000004
+__Hnvbit                  nvbit        000078
+__Hnvram                  nvram        000F00
+__Hnvrram                 nvrram       00000F
+__Hparam                  param        000100
+__Hpowerup                powerup      000018
+__Hramtop                 ramtop       001000
+__Hrbit                   rbit         000080
+__Hrbss                   rbss         000010
+__Hrdata                  rdata        000010
+__Hreset_vec              reset_vec    000004
+__Hstruct                 struct       000010
+__Htemp                   temp         00000F
+__Htext                   text         000008
+__LRAM                    (abs)        000010
+__Lbigbss                 bigbss       000EF9
+__Lbigdata                bigdata      000EF6
+__Lbss                    bss          000008
+__Lclrtext                clrtext      000008
+__Lconfig                 config       300000
+__Lconst                  const        001000
+__Ldata                   data         000100
+__Leeprom_data            eeprom_data  F00000
+__Lend_init               end_init     000062
+__Lfarbss                 farbss       000000
+__Lfardata                fardata      000000
+__Libigdata               ibigdata     000004
+__Lidata                  idata        000FDE
+__Lidloc                  idloc        200000
+__Lifardata               ifardata     000008
+__Linit                   init         000018
+__Lintcode                intcode      000008
+__Lintcodelo              intcodelo    000018
+__Lintentry               intentry     000008
+__Lintret                 intret       000008
+__Lintsave_regs           intsave_regs 000F43
+__Lirdata                 irdata       000004
+__Lnvbit                  nvbit        000078
+__Lnvram                  nvram        000F00
+__Lnvrram                 nvrram       00000F
+__Lparam                  param        000014
+__Lpowerup                powerup      000018
+__Lramtop                 ramtop       001000
+__Lrbit                   rbit         000080
+__Lrbss                   rbss         00000F
+__Lrdata                  rdata        000010
+__Lreset_vec              reset_vec    000000
+__Lstruct                 struct       000010
+__Ltemp                   temp         000000
+__Ltext                   text         000008
+__S0                      (abs)        F00000
+__S1                      (abs)        000F60
+__currentCount            bigbss       000F1D
+__currentFile             bss          0001BA
+__currentHandle           bss          0001BC
+__ramtop                  ramtop       001000
+_activeUDPSocket          bigbss       000F42
+_atoi                     text         01B3E4
+_btohexa_high             text         01C34E
+_btohexa_low              text         01C372
+_exit                     init         000018
+_getsUSART                text         00013C
+_hexatob                  text         01C300
+_isdigit                  text         01B156
+_itoa                     text         01C24E
+_main                     text         01CD3A
+_memcmp                   text         00009E
+_memcpy                   text         01B2B0
+_menu                     const        0011F9
+_menuCommandPrompt        const        00134C
+_mpfsOpenCount            bigbss       000F1F
+_myDHCPBindCount          bigbss       000F00
+_putrsUSART               text         000190
+_putsUSART                text         000166
+_smDHCPState              bigdata      000EF6
+_stackFlags               bigbss       000F21
+_strcpy                   text         01B21A
+_strlen                   text         01B264
+_strupr                   text         01C504
+_swapl                    text         01C3B8
+_swaps                    text         01C396
+awmul                     text         00007E
+config_word1              config       300000
+config_word2              config       300002
+config_word3              config       300004
+config_word4              config       300006
+dowdiv                    text         01B314
+int_func                  text         01CC50
+intlevel0                 text         000008
+intlevel1                 text         000008
+lincr                     text         01B170
+lwdiv                     text         01B312
+lwmod                     text         01B312
+lwmul                     text         00007E
+restore                   text         01CC54
+save                      text         01CCCA
+saved_bsrh                rbss         00000F
+start                     init         000018
+structcopy                text         01B14C
+used_btemp0               (abs)        000001
+used_btemp1               (abs)        000001
+used_btemp10              (abs)        000001
+used_btemp11              (abs)        000001
+used_btemp12              (abs)        000001
+used_btemp13              (abs)        000001
+used_btemp14              (abs)        000001
+used_btemp2               (abs)        000001
+used_btemp3               (abs)        000001
+used_btemp4               (abs)        000001
+used_btemp5               (abs)        000001
+used_btemp6               (abs)        000001
+used_btemp7               (abs)        000001
+used_btemp8               (abs)        000001
+used_btemp9               (abs)        000001

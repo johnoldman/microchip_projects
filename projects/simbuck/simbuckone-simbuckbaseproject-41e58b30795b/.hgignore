@@ -1,0 +1,8 @@
+\.orig$
+\.orig\..*$
+\.chg\..*$
+\.rej$
+\.conflict\~$
+syntax: glob
+C:\Users\rjones\DebenEnterprises\Projects\ModularSimbuck\ModularSimbuckFirmware\Simbuck-libusb\simbuck-libusb.X\nbproject\makefile*.*
+C:\Users\rjones\DebenEnterprises\Projects\ModularSimbuck\ModularSimbuckFirmware\Simbuck-libusb\simbuck-libusb.X\nbproject\*.bash
